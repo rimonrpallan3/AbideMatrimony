@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">AbideMatrimony</string>
 
+    <!--Welcome Activity -->
+    <string name="title_activity_walk_through">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
     <!-- Sign and SignUp Page-->
     <string name="signUp_btn">Register</string>
     <string name="signIn_btn">Sign In</string>
@@ -26,5 +32,52 @@
     <string name="fill_txt">Fill the details below</string>
     <string name="permission_location_check">We need this pemission to read documents from device.</string>
     <string name="snack_error_network">Please turn on your net.</string>
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen2">#F4BF4A</color>
+    <color name="bg_screen1">#FDD835</color>
+    <color name="bg_screen4">#EBBE46</color>
+    <color name="bg_screen3">#FDD835</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_light_screen1">#e4845f</color>
+    <color name="dot_light_screen2">#e4845f</color>
+    <color name="dot_light_screen3">#e4845f</color>
+    <color name="dot_light_screen4">#e4845f</color>
+
+    <!-- dots active colors -->
+    <color name="dot_dark_screen1">#fac045</color>
+    <color name="dot_dark_screen2">#fac045</color>
+    <color name="dot_dark_screen3">#fac045</color>
+    <color name="dot_dark_screen4">#fac045</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+    <color name="welcome_title">#3f3f3f</color>
+    <color name="welcome_des">#666666</color>
+
+    <!--Walk through -->
+    <string name="slide_1_title">Prayer Request</string>
+    <string name="slide_1_desc">Post your requests instantly and get your prayers answered</string>
+    <string name="slide_2_title">Devotional Radio</string>
+    <string name="slide_2_desc">Listen to all your favourite devotional tunes on the go</string>
+    <string name="slide_3_title">Bible Quotes</string>
+    <string name="slide_3_desc">Enlighten yourself with a daily dose of inspirational bible quotes</string>
+    <string name="slide_4_title">Follow Churches</string>
+    <string name="slide_4_desc">Stay connected and get involved in all the activities of your favourite Churches</string>
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 
 </resources>

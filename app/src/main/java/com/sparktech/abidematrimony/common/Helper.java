@@ -45,6 +45,7 @@ import java.io.IOException;
 public class Helper {
 
     public static int REQUEST_LOCATION_CHECK_SETTINGS = 1;
+    public static final String DEFAULT_DETAILS = "DefaultDetails";
 
     public final static String PERMISSIONS_LOCATION_COARSE =
             Manifest.permission.ACCESS_COARSE_LOCATION;

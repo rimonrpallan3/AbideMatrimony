@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.google.gson.Gson;
+import com.sparktech.abidematrimony.Landing.model.DefaultDetails;
 import com.sparktech.abidematrimony.common.Helper;
 import com.sparktech.abidematrimony.splashscreen.view.ISplashView;
 
@@ -15,12 +16,13 @@ import com.sparktech.abidematrimony.splashscreen.view.ISplashView;
  * Created by User on 8/28/2017.
  */
 
-public class SplashPresenter implements IConnectionStatus{
+public class SplashPresenter implements IConnectionStatus {
 
     Context context;
     ISplashView splashView;
     Activity activity;
     String emailAddress;
+    Boolean firstTime = true;
 
     SharedPreferences sharedPrefs;
     SharedPreferences.Editor editor;
@@ -33,19 +35,19 @@ public class SplashPresenter implements IConnectionStatus{
         this.splashView = splashView;
         this.sharedPrefs = sharedPrefs;
         this.editor = editor;
-        emailAddress = getUserGsonInSharedPrefrences();
+       getUserGsonInSharedPrefrences();
     }
 
-    public String getUserGsonInSharedPrefrences(){
-        String emailAddress ="";
+    public void getUserGsonInSharedPrefrences() {
         Gson gson = new Gson();
-        String json = sharedPrefs.getString("UserDetails", null);
-        if(json!=null){
-            //UserDetails userDetails = gson.fromJson(json, UserDetails.class);
-           // emailAddress = userDetails.getEmail();
-            System.out.println("--------- SplashPresenter getUserGsonInSharedPrefrences"+json);
+        String json = sharedPrefs.getString(Helper.DEFAULT_DETAILS, null);
+        if (json != null) {
+            DefaultDetails defaultDetails = gson.fromJson(json, DefaultDetails.class);
+            firstTime = defaultDetails.isFirstTime();
+            emailAddress = defaultDetails.getEmail();
+            System.out.println("--------- SplashPresenter getUserGsonInSharedPrefrences" + json);
         }
-        return emailAddress;
+
     }
 
     @Override
@@ -54,16 +56,18 @@ public class SplashPresenter implements IConnectionStatus{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(Helper.isLocationEnabled(context)) {
-                    if(emailAddress.length()>0){
+
+                if (!firstTime) {
+                    if (emailAddress != null) {
                         splashView.moveToLanding();
-                    }else{
+                    } else {
                         splashView.moveToSignUpLogin();
                     }
-                }else {
-                    Helper.toEnabledLocation(context,activity);
+
+                } else {
+                    splashView.moveToWalkThrough();
                 }
             }
-        },SPLASH_DISPLAY_LENGTH);
+        }, SPLASH_DISPLAY_LENGTH);
     }
 }

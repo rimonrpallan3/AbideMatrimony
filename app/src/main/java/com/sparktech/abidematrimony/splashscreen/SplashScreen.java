@@ -17,9 +17,13 @@ import android.telephony.TelephonyManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.sparktech.abidematrimony.Landing.Landing;
 import com.sparktech.abidematrimony.R;
+import com.sparktech.abidematrimony.common.Helper;
+import com.sparktech.abidematrimony.signuppage.SignUpPage;
 import com.sparktech.abidematrimony.splashscreen.presenter.SplashPresenter;
 import com.sparktech.abidematrimony.splashscreen.view.ISplashView;
+import com.sparktech.abidematrimony.walkthrough.WalkThrough;
 
 import java.util.List;
 
@@ -35,15 +39,25 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class SplashScreen extends AppCompatActivity implements ISplashView,EasyPermissions.PermissionCallbacks{
 
     private SplashPresenter mPresenter;
-
+    SharedPreferences sharedPrefs;
+    SharedPreferences.Editor editor;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
-
-
+        sharedPrefs = getSharedPreferences(Helper.DEFAULT_DETAILS,
+                Context.MODE_PRIVATE);
+        editor = sharedPrefs.edit();
+        mPresenter = new SplashPresenter(this, this, this, sharedPrefs, editor);
+        if ( Build.VERSION.SDK_INT >= 23 &&
+                ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            mPresenter.load();
+        }else {
+            mPresenter.load();
+        }
     }
 
 
@@ -55,5 +69,26 @@ public class SplashScreen extends AppCompatActivity implements ISplashView,EasyP
     @Override
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
 
+    }
+
+    @Override
+    public void moveToSignUpLogin() {
+        Intent intent = new Intent(this, SignUpPage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void moveToLanding() {
+        Intent intent = new Intent(this, Landing.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void moveToWalkThrough() {
+        Intent intent = new Intent(this, WalkThrough.class);
+        startActivity(intent);
+        finish();
     }
 }

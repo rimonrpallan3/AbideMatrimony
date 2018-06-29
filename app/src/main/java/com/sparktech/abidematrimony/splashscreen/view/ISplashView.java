@@ -7,4 +7,5 @@ package com.sparktech.abidematrimony.splashscreen.view;
 public interface ISplashView {
     void moveToSignUpLogin();
     void moveToLanding();
+    void moveToWalkThrough();
 }

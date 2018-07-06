@@ -1,7 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-</LinearLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10"
+            android:layout_marginRight="@dimen/_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110"
+                    android:layout_marginTop="@dimen/_10"
+                    android:layout_marginBottom="@dimen/_10"
+                    android:src="@drawable/logo"/>
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:id="@+id/text_field_boxes1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:iconSignifier="@drawable/ic_action_user"
+                    android:theme="@style/TextFieldBoxes"
+                    app:labelText="username">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:text="" />
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:id="@+id/text_field_boxes6"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:labelText="Password"
+                    app:iconSignifier="@drawable/ic_lock_outline"
+                    app:hasFocus="true"
+                    app:isResponsiveIconColor="true"
+                    app:maxCharacters="15">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:textSize="18sp"
+                        android:maxLines="1"
+                        android:text="" />
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <!--<com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10"
+                    android:layout_marginRight="@dimen/_10"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:hint="Username"
+                    app:met_floatingLabel="highlight"/>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10"
+                    android:layout_marginRight="@dimen/_10"
+                    android:drawableLeft="@drawable/ic_lock_outline"
+                    android:hint="Password"
+                    app:met_floatingLabel="highlight"/>-->
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:src="@drawable/login_btn"
+                    android:layout_gravity="center"/>
+
+
+
+            </LinearLayout>
+
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+</FrameLayout>

@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.sparktech.abidematrimony.Landing.Landing;
 import com.sparktech.abidematrimony.R;
+import com.sparktech.abidematrimony.SignInPage.SignInPage;
 import com.sparktech.abidematrimony.common.Helper;
 import com.sparktech.abidematrimony.signuppage.SignUpPage;
 import com.sparktech.abidematrimony.splashscreen.presenter.SplashPresenter;
@@ -73,7 +74,7 @@ public class SplashScreen extends AppCompatActivity implements ISplashView,EasyP
 
     @Override
     public void moveToSignUpLogin() {
-        Intent intent = new Intent(this, SignUpPage.class);
+        Intent intent = new Intent(this, SignInPage.class);
         startActivity(intent);
         finish();
     }

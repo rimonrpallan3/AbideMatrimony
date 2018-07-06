@@ -48,6 +48,11 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan|adjustResize"/>
 
+        <activity android:name="com.sparktech.abidematrimony.SignInPage.SignInPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
+
 
     </application>
 

@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sparktech.abidematrimony.R;
+import com.sparktech.abidematrimony.SignInPage.SignInPage;
 import com.sparktech.abidematrimony.common.Helper;
 import com.sparktech.abidematrimony.common.PrefManager;
 import com.sparktech.abidematrimony.signuppage.SignUpPage;
@@ -100,7 +101,7 @@ public class WalkThrough extends AppCompatActivity {
 
     private void launchSignInPage() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WalkThrough.this, SignUpPage.class));
+        startActivity(new Intent(WalkThrough.this, SignInPage.class));
         finish();
     }
 

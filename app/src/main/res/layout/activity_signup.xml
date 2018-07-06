@@ -1,6 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarStyle="outsideOverlay"
+    tools:context=".MainActivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/text_field_boxes1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelText="Title"
+            app:maxCharacters="20">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="title" />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_field_boxes2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="0.8"
+                android:theme="@style/Animation.AppCompat.Dialog"
+                app:hasFocus="false"
+                app:labelText="Price">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="price"
+                    app:prefix="$ " />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_field_boxes3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="2"
+                app:alwaysShowHint="true"
+                app:endIcon="@drawable/ic_mic_black_24dp"
+                app:hasFocus="true"
+                app:helperText=" "
+                app:iconSignifier="@drawable/ic_mic_black_24dp"
+                app:isResponsiveIconColor="true"
+                app:labelText="Location">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/extendedEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Placeholder"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:popupElevation="5dp"
+                    android:text="" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        </LinearLayout>
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/text_field_boxes4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            app:hasFocus="false"
+            app:labelText="Description"
+            app:maxCharacters="140">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="description" />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <Button
+            android:id="@+id/dark_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="dark_side" />
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/text_field_boxes5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:animateLayoutChanges="true"
+            app:labelText="Coupon Code">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="coupon_code" />
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <Button
+            android:id="@+id/error_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="test_error" />
+
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/text_field_boxes6"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelText="Password"
+            app:hasFocus="true"
+            app:isResponsiveIconColor="true">
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:textSize="18sp"
+                android:maxLines="1"
+                android:text="Very very very long password string. Lorem ipsum dolor sit amet" />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <Button
+            android:id="@+id/clear_icon_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="clear_icon_button" />
+
+        <Button
+            android:id="@+id/end_icon_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="end_icon_button" />
+
+    </LinearLayout>
+
+</ScrollView>

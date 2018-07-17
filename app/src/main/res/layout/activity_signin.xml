@@ -29,6 +29,8 @@
                     android:id="@+id/text_field_boxes1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10"
+                    android:layout_marginRight="@dimen/_10"
                     app:iconSignifier="@drawable/ic_action_user"
                     android:theme="@style/TextFieldBoxes"
                     app:labelText="username">
@@ -49,6 +51,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:labelText="Password"
+                    android:layout_marginLeft="@dimen/_10"
+                    android:layout_marginRight="@dimen/_10"
                     app:iconSignifier="@drawable/ic_lock_outline"
                     app:hasFocus="true"
                     app:isResponsiveIconColor="true"
@@ -83,12 +87,12 @@
                     android:hint="Password"
                     app:met_floatingLabel="highlight"/>-->
 
-                <ImageButton
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10"
+                    android:text="login"
                     android:background="?android:attr/selectableItemBackground"
-                    android:src="@drawable/login_btn"
                     android:layout_gravity="center"/>
 
 
